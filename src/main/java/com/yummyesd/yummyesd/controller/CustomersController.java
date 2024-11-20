@@ -2,10 +2,8 @@ package com.yummyesd.yummyesd.controller;
 
 import com.yummyesd.yummyesd.dto.CustomerRequest;
 import com.yummyesd.yummyesd.entity.Customer;
-//import com.yummyesd.yummyesd.service.YummyService;
+import com.yummyesd.yummyesd.service.CustomerService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,11 +17,10 @@ import jakarta.validation.Valid;
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/customer")
 public class CustomersController {
-//
-//    private final YummyService yummyService;
-//
-//    @PostMapping
-//    public ResponseEntity <String> addCustomer(@Valid @RequestBody CustomerRequest request) {
-//        return ResponseEntity.ok(yummyService.addCustomer(request));
-//    }
+    private final CustomerService customerService;
+
+    @PostMapping
+    public ResponseEntity <String> addCustomer(@Valid @RequestBody CustomerRequest request) {
+        return ResponseEntity.ok(customerService.addCustomer(request));
+    }
 }

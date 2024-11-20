@@ -14,9 +14,6 @@ public record CustomerRequest(
         String lastName,
 
         @JsonProperty("Age")
-        @NotNull(message = "Customer should be present")
-        @NotEmpty(message = "Customer should be present")
-        @NotBlank(message = "Customer should be present")
         int age,
 
         @NotNull(message = "Customer email is required")
